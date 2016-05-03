@@ -5,7 +5,7 @@ Home: https://github.com/ioos/compliance-checker
 
 Package license: Apache 2.0
 
-Feedstock license: BSD
+Feedstock license: BSD 3-Clause
 
 Summary: Checks Datasets and SOS endpoints for standards compliance
 
@@ -72,6 +72,11 @@ Current build status
 Linux: [![Circle CI](https://circleci.com/gh/conda-forge/compliance-checker-feedstock.svg?style=svg)](https://circleci.com/gh/conda-forge/compliance-checker-feedstock)
 OSX: [![TravisCI](https://travis-ci.org/conda-forge/compliance-checker-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/compliance-checker-feedstock) 
 Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/compliance-checker-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/compliance-checker-feedstock/branch/master)
+
+Current release info
+====================
+Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/compliance-checker/badges/version.svg)](https://anaconda.org/conda-forge/compliance-checker)
+Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/compliance-checker/badges/downloads.svg)](https://anaconda.org/conda-forge/compliance-checker)
 
 
 Updating compliance-checker-feedstock
