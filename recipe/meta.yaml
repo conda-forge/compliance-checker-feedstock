@@ -11,7 +11,7 @@ source:
 
 
 build:
-    number: 0
+    number: 1
     script: python setup.py install --single-version-externally-managed --record record.txt
     entry_points:
         - compliance-checker = cchecker:main
@@ -21,6 +21,7 @@ requirements:
         - python
         - setuptools
     run:
+        - python
         - owslib
         - lxml
         - cf_units
