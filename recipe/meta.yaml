@@ -8,10 +8,12 @@ source:
     fn: compliance-checker-{{ version }}.tar.gz
     url: https://github.com/ioos/compliance-checker/archive/{{ version }}.tar.gz
     sha256: 77fd2e44350a012938e676b104cdf9983a4572e681859ed3d5a15151de497a23
+    patches:
+        - backport_279.patch
 
 
 build:
-    number: 1
+    number: 2
     script: python setup.py install --single-version-externally-managed --record record.txt
     entry_points:
         - compliance-checker = cchecker:main
@@ -22,6 +24,7 @@ requirements:
         - setuptools
     run:
         - python
+        - setuptools
         - owslib
         - lxml
         - cf_units
@@ -41,8 +44,8 @@ test:
 
 about:
     home: https://github.com/ioos/compliance-checker
-    license:  Apache 2.0
-    summary: Checks Datasets and SOS endpoints for standards compliance
+    license: Apache 2.0
+    summary: 'Checks Datasets and SOS endpoints for standards compliance.'
 
 extra:
     recipe-maintainers:
