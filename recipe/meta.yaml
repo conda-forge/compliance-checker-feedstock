@@ -40,7 +40,7 @@ test:
     - compliance_checker.cf
     - compliance_checker.tests
   commands:
-    - py.test -s -rxs -v {{ environ['SRC_DIR'] }}
+    - py.test -s -rxs -v {{ environ['SRC_DIR'] }}  # [not win]
     - compliance-checker --help
 
 about:
