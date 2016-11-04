@@ -1,53 +1,57 @@
-{% set version = "2.3.0" %}
+{% set version = "2.3.1" %}
 
 package:
-    name: compliance-checker
-    version: {{ version }}
+  name: compliance-checker
+  version: {{ version }}
 
 source:
-    fn: compliance-checker-{{ version }}.tar.gz
-    url: https://github.com/ioos/compliance-checker/archive/{{ version }}.tar.gz
-    sha256: d9828172f2523f8d891cd63f79e4d971526e4baa132fd7bae9684308826a4b58
+  fn: compliance-checker-{{ version }}.tar.gz
+  url: https://github.com/ioos/compliance-checker/archive/{{ version }}.tar.gz
+  sha256: dd862932af2c444f689c443265d8a12c394049b29565b514991171864517466a
 
 build:
-    number: 0
-    script: python setup.py install --single-version-externally-managed --record record.txt
-    entry_points:
-        - compliance-checker = cchecker:main
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
+  entry_points:
+    - compliance-checker = cchecker:main
 
 requirements:
-    build:
-        - python
-        - setuptools
-    run:
-        - python
-        - setuptools
-        - owslib
-        - lxml
-        - cf_units
-        - requests
-        - python-dateutil
-        - isodate
-        - jinja2
-        - pygeoif
+  build:
+    - python
+    - setuptools
+  run:
+    - python
+    - setuptools
+    - owslib
+    - lxml
+    - cf_units
+    - requests
+    - python-dateutil
+    - isodate
+    - jinja2
+    - pygeoif
 
 test:
-    imports:
-        - compliance_checker
-        - compliance_checker.cf
-        - compliance_checker.tests
-    commands:
-        - compliance-checker --help
+  requires:
+    - pytest
+    - httpretty
+  imports:
+    - compliance_checker
+    - compliance_checker.cf
+    - compliance_checker.tests
+  commands:
+    - py.test -s -rxs -v {{ environ['SRC_DIR'] }}  # [not win]
+    - compliance-checker --help
 
 about:
-    home: https://github.com/ioos/compliance-checker
-    license: Apache 2.0
-    summary: 'Checks Datasets and SOS endpoints for standards compliance.'
+  home: https://github.com/ioos/compliance-checker
+  license: Apache 2.0
+  summary: 'Checks Datasets and SOS endpoints for standards compliance.'
 
 extra:
-    recipe-maintainers:
-        - benjwadams
-        - daf
-        - kwilcox
-        - lukecampbell
-        - ocefpaf
+  recipe-maintainers:
+    - benjwadams
+    - daf
+    - kwilcox
+    - lukecampbell
+    - ocefpaf
