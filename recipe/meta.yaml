@@ -1,4 +1,4 @@
-{% set version = "2.3.1" %}
+{% set version = "3.0.0" %}
 
 package:
   name: compliance-checker
@@ -7,7 +7,7 @@ package:
 source:
   fn: compliance-checker-{{ version }}.tar.gz
   url: https://github.com/ioos/compliance-checker/archive/{{ version }}.tar.gz
-  sha256: dd862932af2c444f689c443265d8a12c394049b29565b514991171864517466a
+  sha256: f49d58d44ba7e75509317dd2b8ec5ee68e5d0e4a90ccab66ae28895e5a7c3276
 
 build:
   number: 0
@@ -22,14 +22,15 @@ requirements:
   run:
     - python
     - setuptools
-    - owslib
-    - lxml
+    - arrow
     - cf_units
-    - requests
-    - python-dateutil
     - isodate
     - jinja2
+    - lxml
+    - owslib
     - pygeoif
+    - python-dateutil
+    - requests
 
 test:
   requires:

@@ -33,7 +33,6 @@ conda search compliance-checker --channel conda-forge
 ```
 
 
-
 About conda-forge
 =================
 
