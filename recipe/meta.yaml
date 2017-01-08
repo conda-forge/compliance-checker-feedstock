@@ -33,15 +33,17 @@ requirements:
     - requests
 
 test:
+  source_files:
+    - compliance_checker
   requires:
     - pytest
-    - httpretty
+    - httpretty  # [not py3k]
   imports:
     - compliance_checker
     - compliance_checker.cf
     - compliance_checker.tests
   commands:
-    - py.test -s -rxs -v {{ environ['SRC_DIR'] }}  # [not win]
+    - py.test -s -rxs -v compliance_checker  # [not (py3k or win)]
     - compliance-checker --help
 
 about:
