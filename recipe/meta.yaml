@@ -10,7 +10,7 @@ source:
   sha256: 2556b724ec639b4ce9b607c764682c7cfd2aa2d904867d7ea9d2c111a52787d3
 
 build:
-  number: 0
+  number: 1
   script: python setup.py install --single-version-externally-managed --record record.txt
   entry_points:
     - compliance-checker = cchecker:main
@@ -31,7 +31,6 @@ requirements:
     - pygeoif
     - python-dateutil
     - requests
-    - icu 56.*
 
 test:
   source_files:
