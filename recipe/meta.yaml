@@ -1,4 +1,4 @@
-{% set version = "3.0.1" %}
+{% set version = "3.0.2" %}
 
 package:
   name: compliance-checker
@@ -7,10 +7,10 @@ package:
 source:
   fn: compliance-checker-{{ version }}.tar.gz
   url: https://github.com/ioos/compliance-checker/archive/{{ version }}.tar.gz
-  sha256: 2556b724ec639b4ce9b607c764682c7cfd2aa2d904867d7ea9d2c111a52787d3
+  sha256: 25975420ef076891a862753dd0547104a4012dcfbf31408656a8fb60e0fe26ba
 
 build:
-  number: 1
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
   entry_points:
     - compliance-checker = cchecker:main
@@ -29,7 +29,6 @@ requirements:
     - lxml
     - owslib
     - pygeoif
-    - python-dateutil
     - requests
 
 test:
@@ -43,12 +42,13 @@ test:
     - compliance_checker.cf
     - compliance_checker.tests
   commands:
-    - py.test -s -rxs -v compliance_checker  # [not (py3k or win)]
+    - py.test -s -rxs -v compliance_checker  # [not win]
     - compliance-checker --help
 
 about:
   home: https://github.com/ioos/compliance-checker
   license: Apache 2.0
+  license_file:  LICENSE
   summary: 'Checks Datasets and SOS endpoints for standards compliance.'
 
 extra:
