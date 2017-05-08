@@ -10,7 +10,7 @@ source:
   sha256: 2ef3cc361d02f55d28fe6b4f8d88dac4406737c4305bbc0ebadda1d019456d28
 
 build:
-  number: 0
+  number: 1
   script: python setup.py install --single-version-externally-managed --record record.txt
   entry_points:
     - compliance-checker = cchecker:main
@@ -24,11 +24,11 @@ requirements:
     - setuptools
     - arrow
     - cf_units
-    - isodate
+    - isodate 0.5.4
     - jinja2
     - lxml
     - owslib
-    - pygeoif
+    - pygeoif 0.6
     - requests
 
 test:
