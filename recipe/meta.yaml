@@ -1,4 +1,4 @@
-{% set version = "3.0.3" %}
+{% set version = "3.0.4" %}
 
 package:
   name: compliance-checker
@@ -7,7 +7,7 @@ package:
 source:
   fn: compliance-checker-{{ version }}.tar.gz
   url: https://github.com/ioos/compliance-checker/archive/{{ version }}.tar.gz
-  sha256: 2ef3cc361d02f55d28fe6b4f8d88dac4406737c4305bbc0ebadda1d019456d28
+  sha256: 0ce8ae894e87bab26cb23c135a9f87796549cdb62bf8d3023e3bf01d1056f17a
 
 build:
   number: 1
