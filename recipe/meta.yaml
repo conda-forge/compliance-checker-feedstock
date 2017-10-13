@@ -7,6 +7,8 @@ package:
 source:
   url: https://pypi.io/packages/source/c/compliance-checker/compliance-checker-{{ version }}.tar.gz
   sha256: d4aae3d3e58e7e0fead1249579fd0dc063e5c2f7605d8455fecd9d1b4cf1effa
+  patches:
+    - httpretty.patch
 
 build:
   number: 0
@@ -37,7 +39,6 @@ test:
     - compliance_checker
   requires:
     - pytest
-    - httpretty  # [not py3k]
   imports:
     - compliance_checker
     - compliance_checker.cf
