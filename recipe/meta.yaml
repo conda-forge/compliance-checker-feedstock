@@ -1,13 +1,14 @@
-{% set version = "3.0.4" %}
+{% set version = "3.1.1" %}
 
 package:
   name: compliance-checker
   version: {{ version }}
 
 source:
-  fn: compliance-checker-{{ version }}.tar.gz
-  url: https://github.com/ioos/compliance-checker/archive/{{ version }}.tar.gz
-  sha256: 0ce8ae894e87bab26cb23c135a9f87796549cdb62bf8d3023e3bf01d1056f17a
+  url: https://pypi.io/packages/source/c/compliance-checker/compliance-checker-{{ version }}.tar.gz
+  sha256: d4aae3d3e58e7e0fead1249579fd0dc063e5c2f7605d8455fecd9d1b4cf1effa
+  patches:
+    - httpretty.patch
 
 build:
   number: 0
@@ -22,27 +23,28 @@ requirements:
   run:
     - python
     - setuptools
-    - arrow
-    - cf_units
-    - isodate 0.5.4
-    - jinja2
-    - lxml
-    - owslib
-    - pygeoif 0.6
-    - requests
+    - owslib >=0.8.3
+    - lxml >=3.2.1
+    - cf_units >=0.1.1
+    - requests >=2.2.1
+    - isodate >=0.5.4
+    - jinja2 >=2.7.3
+    - pygeoif >=0.6
+    - netcdf4 >=1.3.0
+    - regex 2017.07.28
+    - pendulum >=1.2.4
 
 test:
   source_files:
     - compliance_checker
   requires:
     - pytest
-    - httpretty  # [not py3k]
   imports:
     - compliance_checker
     - compliance_checker.cf
     - compliance_checker.tests
   commands:
-    - py.test -s -rxs -v compliance_checker  # [not win]
+    - py.test -k "not (integration or cell_bounds)" -s -rxs -v compliance_checker
     - compliance-checker --help
 
 about:
