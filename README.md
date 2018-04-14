@@ -14,14 +14,16 @@ Summary: Checks Datasets and SOS endpoints for standards compliance.
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/compliance-checker-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/compliance-checker-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/compliance-checker-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/compliance-checker-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/compliance-checker-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/compliance-checker-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/compliance-checker-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/compliance-checker-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/compliance-checker-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/compliance-checker-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/compliance-checker-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/compliance-checker-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/compliance-checker/badges/version.svg)](https://anaconda.org/conda-forge/compliance-checker)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/compliance-checker/badges/downloads.svg)](https://anaconda.org/conda-forge/compliance-checker)
+
+[![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/compliance-checker.svg)](https://anaconda.org/conda-forge/compliance-checker)
+[![Conda Version](https://img.shields.io/conda/vn/conda-forge/compliance-checker.svg)](https://anaconda.org/conda-forge/compliance-checker)
+[![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/compliance-checker.svg)](https://anaconda.org/conda-forge/compliance-checker)
 
 Installing compliance-checker
 =============================
