@@ -45,7 +45,6 @@ test:
     - compliance_checker.cf
     - compliance_checker.tests
   commands:
-    - py.test -k "not (integration or cell_bounds)" -s -rxs -v compliance_checker
     - compliance-checker --help
 
 about:
