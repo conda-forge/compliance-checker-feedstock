@@ -1,4 +1,4 @@
-{% set version = "4.0.0" %}
+{% set version = "4.0.1" %}
 
 package:
   name: compliance-checker
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://github.com/ioos/compliance-checker/archive/{{ version }}.tar.gz
-  sha256: 3fca495eda37b4a9b4914fbacd4c983f0ec8725e2308d56a754f415472229886
+  sha256: d9d7eb9d8a195a1e76f6c773866e7062c00fe2c7fd83c81d6df8cefd76805e9f
   patches:
     - httpretty.patch
 
 build:
-  number: 1
+  number: 0
   script: python -m pip install --no-deps --ignore-installed .
   entry_points:
     - compliance-checker = cchecker:main
