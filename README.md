@@ -21,9 +21,9 @@ Current build status
 Current release info
 ====================
 
-[![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/compliance-checker.svg)](https://anaconda.org/conda-forge/compliance-checker)
-[![Conda Version](https://img.shields.io/conda/vn/conda-forge/compliance-checker.svg)](https://anaconda.org/conda-forge/compliance-checker)
-[![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/compliance-checker.svg)](https://anaconda.org/conda-forge/compliance-checker)
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-compliance--checker-green.svg)](https://anaconda.org/conda-forge/compliance-checker) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/compliance-checker.svg)](https://anaconda.org/conda-forge/compliance-checker) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/compliance-checker.svg)](https://anaconda.org/conda-forge/compliance-checker) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/compliance-checker.svg)](https://anaconda.org/conda-forge/compliance-checker) |
 
 Installing compliance-checker
 =============================
