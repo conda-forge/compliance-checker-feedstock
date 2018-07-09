@@ -11,13 +11,14 @@ source:
     - httpretty.patch
 
 build:
-  number: 0
+  noarch: python
+  number: 1
   script: python -m pip install --no-deps --ignore-installed .
   entry_points:
     - compliance-checker = cchecker:main
 
 requirements:
-  build:
+  host:
     - python
     - pip
   run:
