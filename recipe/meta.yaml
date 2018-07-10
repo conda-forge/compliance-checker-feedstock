@@ -5,19 +5,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/ioos/compliance-checker/archive/{{ version }}.tar.gz
-  sha256: d9d7eb9d8a195a1e76f6c773866e7062c00fe2c7fd83c81d6df8cefd76805e9f
+  url: https://pypi.io/packages/source/c/compliance-checker/compliance-checker-{{ version }}.tar.gz
+  sha256: caf1a4a9b78caa153b09c763ef47de4bc2399768815f44ed4ed73c89ccff96f4
   patches:
     - httpretty.patch
 
 build:
-  number: 0
+  noarch: python
+  number: 1
   script: python -m pip install --no-deps --ignore-installed .
   entry_points:
     - compliance-checker = cchecker:main
 
 requirements:
-  build:
+  host:
     - python
     - pip
   run:
