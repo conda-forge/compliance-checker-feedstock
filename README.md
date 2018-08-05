@@ -14,8 +14,9 @@ Summary: Checks Datasets and SOS endpoints for standards compliance.
 Current build status
 ====================
 
-All platforms:
-[![noarch](https://img.shields.io/circleci/project/github/conda-forge/compliance-checker-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/compliance-checker-feedstock)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/compliance-checker-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/compliance-checker-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/compliance-checker-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/compliance-checker-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/compliance-checker-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/compliance-checker-feedstock/branch/master)
 
 Current release info
 ====================
