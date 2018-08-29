@@ -47,6 +47,7 @@ test:
     - compliance_checker.tests
   commands:
     - compliance-checker --help
+    - pytest -k "not (integration or cell_bounds)" -s -rxs -v compliance_checker
 
 about:
   home: https://github.com/ioos/compliance-checker
