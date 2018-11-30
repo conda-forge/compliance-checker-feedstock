@@ -9,9 +9,9 @@ source:
   sha256: c1c2936f8f9066a48f11dc5859ebadb1c8074c993910c7decb407690d701e416
 
 build:
-  number: 0
+  number: 1
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv"
   entry_points:
     - compliance-checker = cchecker:main
 
@@ -24,7 +24,7 @@ requirements:
     - setuptools
     - owslib >=0.8.3
     - lxml >=3.2.1
-    - cf_units >=2
+    - cf-units >=2
     - requests >=2.2.1
     - isodate >=0.5.4
     - jinja2 >=2.7.3
