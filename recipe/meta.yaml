@@ -9,9 +9,9 @@ source:
   sha256: c1c2936f8f9066a48f11dc5859ebadb1c8074c993910c7decb407690d701e416
 
 build:
-  number: 1
+  number: 2
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv"
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   entry_points:
     - compliance-checker = cchecker:main
 
@@ -47,7 +47,8 @@ test:
     - compliance-checker --help
     # Skipping integration, cell_bounds, and dataset_GenericFile
     # b/c the files needed to run them are not in the tarball.
-    - pytest -k "not (integration or cell_bounds or dataset_GenericFile)" -s -rxs -v compliance_checker
+    # skipping test_thredds b/c the dataset upstream changed.
+    - pytest -k "not (integration or cell_bounds or dataset_GenericFile or test_thredds)" -s -rxs -v compliance_checker
 
 about:
   home: https://github.com/ioos/compliance-checker
