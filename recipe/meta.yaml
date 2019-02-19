@@ -1,4 +1,4 @@
-{% set version = "4.2.0" %}
+{% set version = "4.2.1" %}
 
 package:
   name: compliance-checker
@@ -6,11 +6,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/c/compliance-checker/compliance-checker-{{ version }}.tar.gz
-  sha256: e38fbf2a6d56166c075e68fce5fbaeb53924d111833f976e5d8f46c5d3e4c5af
+  sha256: 1cd36cd46fed5bd882d8ddee1a7bcf4cb941d223484a8cbe02e45a7dd3f41ce9
 
 build:
   number: 0
-  noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   entry_points:
     - compliance-checker = cchecker:main
@@ -21,7 +20,7 @@ requirements:
     - pip
   run:
     - python
-    - setuptools
+    - setuptools >=15.0
     - owslib >=0.8.3
     - lxml >=3.2.1
     - cf-units >=2
@@ -30,25 +29,22 @@ requirements:
     - jinja2 >=2.7.3
     - pygeoif >=0.6
     - netcdf4 >=1.4
-    - regex 2017.07.28
+    - regex >=2017.07.28
     - pendulum >=1.2.4
-    - tabulate 0.8.2
+    - functools32  # [py2k]
 
 test:
   source_files:
     - compliance_checker
   requires:
     - pytest
+    - httpretty  # [py2k]
   imports:
     - compliance_checker
     - compliance_checker.cf
     - compliance_checker.tests
   commands:
     - compliance-checker --help
-    # Skipping integration, cell_bounds, and dataset_GenericFile
-    # b/c the files needed to run them are not in the tarball.
-    # skipping test_thredds b/c the dataset upstream changed.
-    - pytest -k "not (integration or cell_bounds or dataset_GenericFile or test_thredds)" -s -rxs -v compliance_checker
 
 about:
   home: https://github.com/ioos/compliance-checker
