@@ -38,6 +38,7 @@ test:
     - compliance_checker
   requires:
     - pytest
+    - httpretty  # [py27]
   imports:
     - compliance_checker
     - compliance_checker.cf
