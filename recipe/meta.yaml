@@ -10,7 +10,6 @@ source:
 
 build:
   number: 0
-  noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   entry_points:
     - compliance-checker = cchecker:main
@@ -21,7 +20,7 @@ requirements:
     - pip
   run:
     - python
-    - setuptools
+    - setuptools >=15.0
     - owslib >=0.8.3
     - lxml >=3.2.1
     - cf-units >=2
@@ -30,9 +29,9 @@ requirements:
     - jinja2 >=2.7.3
     - pygeoif >=0.6
     - netcdf4 >=1.4
-    - regex 2017.07.28
+    - regex >=2017.07.28
     - pendulum >=1.2.4
-    - tabulate 0.8.2
+    - functools32  # [py2k]
 
 test:
   source_files:
