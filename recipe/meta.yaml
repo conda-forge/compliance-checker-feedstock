@@ -38,7 +38,7 @@ test:
     - compliance_checker
   requires:
     - pytest
-    - httpretty  # [py27]
+    - httpretty  # [py2k]
   imports:
     - compliance_checker
     - compliance_checker.cf
@@ -48,7 +48,7 @@ test:
     # Skipping integration, cell_bounds, and dataset_GenericFile
     # b/c the files needed to run them are not in the tarball.
     # skipping test_thredds b/c the dataset upstream changed.
-    - pytest -k "not (integration or cell_bounds or dataset_GenericFile or test_thredds)" -s -rxs -v compliance_checker
+    - pytest -k "not (integration or cell_bounds or dataset_GenericFile or test_thredds or test_ioos_sos)" -s -rxs -v compliance_checker
 
 about:
   home: https://github.com/ioos/compliance-checker
