@@ -1,4 +1,4 @@
-{% set version = "4.3.2" %}
+{% set version = "4.3.3" %}
 
 package:
   name: compliance-checker
@@ -6,21 +6,23 @@ package:
 
 source:
   url: https://pypi.io/packages/source/c/compliance-checker/compliance-checker-{{ version }}.tar.gz
-  sha256: 0c934985be4eed1f5c627b15595133f3f533fb45fff77eaee747a6a2ed6f7844
+  sha256: d8376e47b6823f5347cca89c10ed6e5113e2c28ad4dc899d2492b89600d44654
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  noarch: python
+  script: "{{ PYTHON }} -m pip install . -vv"
   entry_points:
     - compliance-checker = cchecker:main
 
 requirements:
   host:
-    - python
+    - python >=3.5
     - pip
   run:
-    - python
+    - python >=3.5
     - setuptools >=15.0
+    - cftime >=1.1.0
     - owslib >=0.8.3
     - lxml >=3.2.1
     - cf-units >=2
@@ -28,29 +30,28 @@ requirements:
     - isodate >=0.5.4
     - jinja2 >=2.7.3
     - pygeoif >=0.6
-    - netcdf4 >=1.4
+    - netcdf4 >=1.4.0
     - regex >=2017.07.28
     - pendulum >=1.2.4
-    - functools32  # [py2k]
+    - pyproj >=2.2.1
+    - validators >=0.14.2
 
 test:
   source_files:
     - compliance_checker
   requires:
     - pytest
-    - httpretty  # [py2k]
   imports:
     - compliance_checker
     - compliance_checker.cf
-    - compliance_checker.tests
   commands:
     - compliance-checker --help
 
 about:
   home: https://github.com/ioos/compliance-checker
-  license: Apache 2.0
-  license_file:  LICENSE
-  summary: 'Checks Datasets and SOS endpoints for standards compliance'
+  license: Apache-2.0
+  license_file: LICENSE
+  summary: Checks Datasets and SOS endpoints for standards compliance
 
 extra:
   recipe-maintainers:
