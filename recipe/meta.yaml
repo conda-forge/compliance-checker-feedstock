@@ -1,4 +1,4 @@
-{% set version = "4.3.2" %}
+{% set version = "4.3.3" %}
 
 package:
   name: compliance-checker
@@ -6,11 +6,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/c/compliance-checker/compliance-checker-{{ version }}.tar.gz
-  sha256: 0c934985be4eed1f5c627b15595133f3f533fb45fff77eaee747a6a2ed6f7844
+  sha256: d8376e47b6823f5347cca89c10ed6e5113e2c28ad4dc899d2492b89600d44654
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - compliance-checker = cchecker:main
 
@@ -49,8 +49,8 @@ test:
 about:
   home: https://github.com/ioos/compliance-checker
   license: Apache 2.0
-  license_file:  LICENSE
-  summary: 'Checks Datasets and SOS endpoints for standards compliance'
+  license_file: LICENSE
+  summary: Checks Datasets and SOS endpoints for standards compliance
 
 extra:
   recipe-maintainers:
