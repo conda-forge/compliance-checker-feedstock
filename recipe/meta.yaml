@@ -1,4 +1,4 @@
-{% set version = "4.3.3" %}
+{% set version = "4.3.4" %}
 
 package:
   name: compliance-checker
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/c/compliance-checker/compliance-checker-{{ version }}.tar.gz
-  sha256: d8376e47b6823f5347cca89c10ed6e5113e2c28ad4dc899d2492b89600d44654
+  sha256: e01347c155fad2f73a40f21ae44c69cc5b48f559fdafc0448465dbf64a1262db
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - compliance-checker = cchecker:main
 
