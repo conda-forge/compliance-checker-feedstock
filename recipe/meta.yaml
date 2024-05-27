@@ -1,34 +1,40 @@
-{% set version = "5.1.0" %}
+{% set name = "compliance-checker" %}
+{% set version = "5.1.1" %}
 
 package:
-  name: compliance-checker
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/c/compliance-checker/compliance-checker-{{ version }}.tar.gz
-  sha256: 471704e86926b8ac3f5469c1a0a14cc6febdc7603489472349afb1ff9b936563
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/compliance_checker-{{ version }}.tar.gz
+  sha256: 8ad49a2ac7bd9a2add582c27ba39d21bf14e362d64552b94e5d17e21dce0ac97
 
 build:
-  number: 0
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - compliance-checker = cchecker:main
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
 
 requirements:
   host:
-    - python >=3.7
-    - pip
+    - python >=3.8
+    - setuptools >=42
     - setuptools-scm
+    - wheel
+    - pip
   run:
-    - python >=3.7
+    - python >=3.8
     - cf-units >=2
     - cftime >=1.1.0
-    - isodate >=0.5.4
+    - importlib-metadata
+    - importlib-resources
+    - isodate >=0.6.1
     - jinja2 >=2.7.3
     - lxml >=3.2.1
-    - netcdf4 >=1.5.7
+    - netcdf4 >=1.6.4
     - owslib >=0.8.3
+    - packaging
     - pendulum >=1.2.4
     - pygeoif >=0.6
     - pyproj >=2.2.1
@@ -43,10 +49,12 @@ test:
     - compliance_checker
   requires:
     - pytest
+    - pip
   imports:
     - compliance_checker
     - compliance_checker.cf
   commands:
+    - pip check
     - compliance-checker --help
 
 about:
