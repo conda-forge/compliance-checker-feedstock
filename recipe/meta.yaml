@@ -1,5 +1,5 @@
 {% set name = "compliance-checker" %}
-{% set version = "5.1.1" %}
+{% set version = "5.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/compliance_checker-{{ version }}.tar.gz
-  sha256: 8ad49a2ac7bd9a2add582c27ba39d21bf14e362d64552b94e5d17e21dce0ac97
+  sha256: 7c7a1a3cb773803f24edb1174b2df3492141566f058d35767c36278edff4d317
 
 build:
   entry_points:
     - compliance-checker = cchecker:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
