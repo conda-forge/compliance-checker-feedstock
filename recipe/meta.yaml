@@ -1,3 +1,4 @@
+{% set python_min = "3.10" %}
 {% set name = "compliance-checker" %}
 {% set version = "5.2.0" %}
 
