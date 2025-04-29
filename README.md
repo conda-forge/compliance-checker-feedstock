@@ -149,6 +149,3 @@ Feedstock Maintainers
 * [@lukecampbell](https://github.com/lukecampbell/)
 * [@ocefpaf](https://github.com/ocefpaf/)
 
-
-<!-- dummy commit to enable rerendering -->
-
