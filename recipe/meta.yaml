@@ -1,6 +1,6 @@
 {% set python_min = "3.10" %}
 {% set name = "compliance-checker" %}
-{% set version = "5.3.0" %}
+{% set version = "5.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/compliance_checker-{{ version }}.tar.gz
-  sha256: 3511a27f87e2b36158d55d3ff90bd28bcb4a32689ecaac5b0c411bfa249b2030
+  sha256: 62d54edcbfead0c84cf5025b5019d8e63736fdbf85b6899d8448d163ca1a584b
 
 build:
   entry_points:
@@ -27,7 +27,7 @@ requirements:
   run:
     - python >={{ python_min }}
     - cf-units >=2
-    - cftime >=1.1.0
+    - cftime >=1.1
     - importlib-metadata
     - importlib-resources
     - isodate >=0.6.1
@@ -39,9 +39,9 @@ requirements:
     - pendulum >=1.2.4
     - pygeoif >=0.6
     - pyproj >=2.2.1
-    - regex >=2017.07.28
+    - regex >=2017.7.28
     - requests >=2.2.1
-    - setuptools >=15.0
+    - setuptools >=15
     - shapely >=1.7.1
     - validators >=0.14.2
 
