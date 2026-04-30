@@ -1,6 +1,6 @@
 {% set python_min = "3.10" %}
 {% set name = "compliance-checker" %}
-{% set version = "6.0.0" %}
+{% set version = "6.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/compliance_checker-{{ version }}.tar.gz
-  sha256: 170405084b7036c311c215b9a45a8b952a7794a4baf51407b558712fbbfd9ca5
+  sha256: 6178dc733ec791284dc05bbdd68dacd2e94f6f2e2a2d0220b733f75515c4475e
 
 build:
   entry_points:
